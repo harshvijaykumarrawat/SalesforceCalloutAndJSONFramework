@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fields>
+        <fullName>Apex_Class_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Apex Class API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Callout_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Callout Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Is_Disabled__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Disabled</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Is_Start__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Is Start</label>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Object_Field_API_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Object Field API Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Parent_JSON_Generator__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Parent JSON Generator</label>
+        <length>40</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Property Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Property_Type__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Property Type</label>
+        <required>false</required>
+        <type>Picklist</type>
+        <valueSet>
+            <restricted>true</restricted>
+            <valueSetDefinition>
+                <sorted>false</sorted>
+                <value>
+                    <fullName>Array</fullName>
+                    <default>true</default>
+                    <label>Array</label>
+                </value>
+                <value>
+                    <fullName>Object</fullName>
+                    <default>false</default>
+                    <label>Object</label>
+                </value>
+                <value>
+                    <fullName>Value</fullName>
+                    <default>false</default>
+                    <label>Value</label>
+                </value>
+            </valueSetDefinition>
+        </valueSet>
+    </fields>
+    <fields>
+        <fullName>Static_Value__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>Static Value</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>sObject_Name__c</fullName>
+        <externalId>false</externalId>
+        <fieldManageability>DeveloperControlled</fieldManageability>
+        <label>sObject Name</label>
+        <length>255</length>
+        <required>false</required>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>JSON Generator</label>
+    <listViews>
+        <fullName>All_Fields</fullName>
+        <columns>DeveloperName</columns>
+        <columns>IsProtected</columns>
+        <columns>Apex_Class_API_Name__c</columns>
+        <columns>Callout_Name__c</columns>
+        <columns>Is_Disabled__c</columns>
+        <columns>Is_Start__c</columns>
+        <columns>Object_Field_API_Name__c</columns>
+        <columns>Parent_JSON_Generator__c</columns>
+        <columns>Property_Name__c</columns>
+        <columns>Property_Type__c</columns>
+        <columns>sObject_Name__c</columns>
+        <columns>Static_Value__c</columns>
+        <filterScope>Everything</filterScope>
+        <label>All Fields</label>
+    </listViews>
+    <pluralLabel>JSONs Generator</pluralLabel>
+    <validationRules>
+        <fullName>sObject_Name_is_only_for_is_Start_true</fullName>
+        <active>true</active>
+        <errorConditionFormula>IF(Is_Start__c,  ISBLANK( sObject_Name__c ) ,  NOT(ISBLANK( sObject_Name__c )) )</errorConditionFormula>
+        <errorMessage>The sObject name should be populated only for is start true</errorMessage>
+    </validationRules>
+    <visibility>Public</visibility>
+</CustomObject>
